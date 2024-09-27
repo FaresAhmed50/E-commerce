@@ -1,0 +1,7 @@
+
+
+
+
+.btn {
+        @apply border-0 py-[5px] px-[15px] mr-3 rounded-2xl
+}
