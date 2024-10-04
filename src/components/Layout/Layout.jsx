@@ -9,9 +9,9 @@ const Layout = () => {
         <div>
             <Navbar/>
 
-            <div className={`container py-16 mx-auto`}>
+
                 <Outlet/>
-            </div>
+
 
             <Footer/>
         </div>

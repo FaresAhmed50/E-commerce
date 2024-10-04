@@ -10,6 +10,8 @@ import Brands from "./components/Brands/Brands.jsx";
 import Login from "./components/Login/Login.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Products from "./components/Products/Products.jsx";
+import CounterContextProvider from "./Context/CounterContext.jsx";
+import UserTokenContextProvider from "./Context/UserTokenContext.jsx";
 
 
 function App() {
@@ -40,9 +42,16 @@ function App() {
     return (
     <>
 
-        <RouterProvider router={Routes}>
+        <UserTokenContextProvider>
+            <CounterContextProvider>
+                <RouterProvider router={Routes}>
 
-        </RouterProvider>
+                </RouterProvider>
+            </CounterContextProvider>
+
+        </UserTokenContextProvider>
+
+
     </>
   )
 
