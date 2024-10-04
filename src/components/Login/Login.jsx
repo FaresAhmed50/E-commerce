@@ -14,7 +14,7 @@ const Login = () => {
     let [ApiError, setApiError] = useState(null);
     const [isLoadeing, setIsLoadeing] = useState(false);
     let navigate = useNavigate();
-    const tokenContext = useContext(UserTokenContext);
+    const {Token , setToken} = useContext(UserTokenContext);
 
     const MySwal = withReactContent(Swal);
 
@@ -27,10 +27,12 @@ const Login = () => {
 
                 let{data} = res;
 
-                if(data.message === 'success'){
+                if(data.message == 'success'){
+
 
                     localStorage.setItem("token" , data.token);
-                    tokenContext.setToken(data.token);
+                    setToken(data.token);
+                    console.log(Token);
 
                     navigate('/home');
                 }

@@ -14,9 +14,13 @@ const Navbar = () => {
 
         setToken(null);
         localStorage.setItem('token' , null);
+        localStorage.clear();
         console.log(Token);
         navigate('/login');
     }
+
+
+
 
 
 

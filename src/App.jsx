@@ -12,6 +12,7 @@ import NotFound from "./components/NotFound/NotFound.jsx";
 import Products from "./components/Products/Products.jsx";
 import CounterContextProvider from "./Context/CounterContext.jsx";
 import UserTokenContextProvider from "./Context/UserTokenContext.jsx";
+import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes.jsx";
 
 
 function App() {
@@ -19,15 +20,19 @@ function App() {
     
     const Routes = createBrowserRouter([
         {path:"" , element:<Layout/> , children : [
+
+
                 {index:true , element : <Register/>},
 
-                {path:'home' , element: <Home/>},
-                {path : 'about' , element : <About/>},
-                {path:'cart' , element:<Cart/>},
-                {path:'categories' , element: <Categories/>},
-                {path :'brands' , element:<Brands/>},
+                {path:'home' , element: <ProtectedRoutes><Home/></ProtectedRoutes>},
+                {path : 'about' , element : <ProtectedRoutes><About/></ProtectedRoutes>},
+                {path:'cart' , element: <ProtectedRoutes> <Cart/></ProtectedRoutes>},
+                {path:'categories' , element: <ProtectedRoutes><Categories/></ProtectedRoutes>},
+                {path :'brands' , element: <ProtectedRoutes><Brands/></ProtectedRoutes>},
+                {path:"products" , element: <ProtectedRoutes><Products/></ProtectedRoutes>},
+
+
                 {path:'login' , element:<Login/>},
-                {path:"products" , element:<Products/>},
                 {path:"register" , element:<Register/>},
 
 
