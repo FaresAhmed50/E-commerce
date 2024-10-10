@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+ import React, {useContext} from 'react';
 import styles from './Navbar.module.css';
 import {NavLink, useNavigate} from "react-router-dom";
 import Logo from '../../assets/images/Logo.svg';
@@ -11,11 +11,8 @@ const Navbar = () => {
     let navigate = useNavigate();
 
     function LogOut(){
-
         setToken(null);
-        localStorage.setItem('token' , null);
-        localStorage.clear();
-        console.log(Token);
+        localStorage.removeItem('token' );
         navigate('/login');
     }
 

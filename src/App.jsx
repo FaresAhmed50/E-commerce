@@ -13,6 +13,7 @@ import Products from "./components/Products/Products.jsx";
 import CounterContextProvider from "./Context/CounterContext.jsx";
 import UserTokenContextProvider from "./Context/UserTokenContext.jsx";
 import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes.jsx";
+import ProductDetails from "./components/ProductDetails/ProductDetails.jsx";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 {path:'categories' , element: <ProtectedRoutes><Categories/></ProtectedRoutes>},
                 {path :'brands' , element: <ProtectedRoutes><Brands/></ProtectedRoutes>},
                 {path:"products" , element: <ProtectedRoutes><Products/></ProtectedRoutes>},
+                {path:"productDetails/:id/:CategoryID" , element:<ProtectedRoutes><ProductDetails/></ProtectedRoutes>},
 
 
                 {path:'login' , element:<Login/>},

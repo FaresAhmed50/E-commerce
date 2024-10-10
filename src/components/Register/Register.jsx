@@ -17,7 +17,7 @@ const Register = () => {
     const MySwal = withReactContent(Swal);
 
     function Register (formValue){
-        console.log("hello" , formValue);
+
         setIsLoadeing(true);
 
          axios.post('https://ecommerce.routemisr.com/api/v1/auth/signup' , formValue)
@@ -33,7 +33,7 @@ const Register = () => {
              } )
              .catch((err) => {
 
-                 console.log(err)
+
                  setApiError(err.response.data.message);
                  setIsLoadeing(false);
 

@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Home.module.css';
 
+import RecentProduct from "../RecentProduct/RecentProduct.jsx";
+
 const Home = () => {
+
+
+
+
+    useEffect(() => {
+    }, []);
+
+
+
+
     return (
-        <div>
-            <h1 className={"backdrop-blur  text-cyan-400"}>Home</h1>
-        </div>
+
+        <>
+            <div className={` w-[90%] mx-auto py-20`}>
+                <RecentProduct/>
+            </div>
+        </>
+
     );
 };
 
